@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview privacy policy</title>
+<meta name="description" content="Privacy policy for the Overview browser extension.">
+<link rel="icon" type="image/png" href="icon-32.png">
+<style>
+  :root {
+    --text: #1f1f1f; --text-2: #444746; --link: #0b57d0; --border: #dadce0;
+    --surface: #ffffff; --field: #f0f4f9; color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --text: #e3e3e3; --text-2: #c4c7c5; --link: #a8c7fa; --border: #444746;
+      --surface: #1f1f1f; --field: #282a2c; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--text);
+    font: 16px/26px 'Google Sans', Roboto, 'Segoe UI', system-ui, Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 24px 64px; }
+  .brand { display: flex; gap: 12px; align-items: center; margin-bottom: 28px; color: var(--text-2); font-size: 15px; }
+  .brand img { width: 32px; height: 32px; }
+  h1 { margin: 0 0 4px; font-size: 32px; line-height: 40px; font-weight: 400; }
+  h1 + p { margin-top: 0; color: var(--text-2); font-size: 14px; }
+  h2 { margin: 40px 0 8px; font-size: 20px; line-height: 28px; font-weight: 500; }
+  p, li { color: var(--text); }
+  a { color: var(--link); text-underline-offset: 2px; }
+  code { padding: 1px 6px; font-size: 14px; background: var(--field); border-radius: 6px; }
+  ul { padding-left: 22px; }
+  li + li { margin-top: 6px; }
+  .table { overflow-x: auto; margin: 16px 0; border: 1px solid var(--border); border-radius: 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 21px; }
+  th, td { padding: 12px 16px; text-align: left; vertical-align: top; }
+  th { font-weight: 500; background: var(--field); }
+  tr + tr td { border-top: 1px solid var(--border); }
+  @media (max-width: 600px) {
+    main { padding: 32px 16px 48px; }
+    h1 { font-size: 28px; line-height: 36px; }
+    thead { display: none; }
+    table, tbody, tr, td { display: block; }
+    td { padding: 4px 16px; }
+    td:first-child { padding-top: 14px; }
+    td:last-child { padding-bottom: 14px; }
+    td::before { content: attr(data-label); display: block; color: var(--text-2); font-size: 12px; font-weight: 500; }
+    tr + tr td { border-top: 0; }
+    tr + tr { border-top: 1px solid var(--border); }
+  }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--text-2); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand"><img src="icon-128.png" alt="">Overview for Google Search</div>
+  <h1>Privacy policy</h1>
+<p><em>Last updated: 2026-11-18</em></p>
+<p>Overview is a browser extension that answers Google Search queries with cited sources,
+using AI providers <strong>you</strong> configure. Its author operates no server: nothing you do
+with the extension is sent to, logged by, stored by or monetized by the author.</p>
+<h2>Your consent</h2>
+<p>Overview sends nothing to any provider until you agree to how it works. On first use
+it shows a short explanation of what is sent and to whom, and asks you to choose
+<strong>Agree and continue</strong>. You can withdraw that consent at any time in Settings →
+Privacy; Overview then stops sending anything until you agree again. If this policy
+changes in a way that affects what is sent, Overview asks you again.</p>
+<h2>What is processed, and by whom</h2>
+<p>When Overview is on, you have agreed, and you search on <code>www.google.com</code>:</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Sent to</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody><tr>
+<td data-label="Data">Your search query, a retrieval objective and a keyword version derived from it, any domain/date filters, and the sites you chose to block</td>
+<td data-label="Sent to"><strong>Parallel AI</strong> (<code>api.parallel.ai</code>) with your API key</td>
+<td data-label="Why">To find web sources</td>
+</tr>
+<tr>
+<td data-label="Data">(Deep search only) up to 5 URLs selected from those results</td>
+<td data-label="Sent to"><strong>Parallel AI</strong></td>
+<td data-label="Why">To extract page excerpts</td>
+</tr>
+<tr>
+<td data-label="Data">Your query and the retrieved source excerpts</td>
+<td data-label="Sent to"><strong>OpenRouter</strong> (<code>openrouter.ai</code>) with your API key, <strong>or</strong> your local Ollama server (<code>127.0.0.1</code> / <code>localhost</code>)</td>
+<td data-label="Why">To write the cited answer</td>
+</tr>
+<tr>
+<td data-label="Data">The answer&#39;s statements and the source excerpts they cite</td>
+<td data-label="Sent to">The same model provider</td>
+<td data-label="Why">To check each statement against its sources for the accuracy score (when the score is on; it can be turned off in Settings)</td>
+</tr>
+<tr>
+<td data-label="Data">For a follow-up question: the question, plus the earlier questions and answers of that conversation (the last three)</td>
+<td data-label="Sent to">The same model provider</td>
+<td data-label="Why">To understand the follow-up and turn it into a search</td>
+</tr>
+<tr>
+<td data-label="Data">Your OpenRouter key (key-information request only, no search data)</td>
+<td data-label="Sent to"><strong>OpenRouter</strong></td>
+<td data-label="Why">To check your free-model daily allowance, which decides how many free requests a search may use</td>
+</tr>
+<tr>
+<td data-label="Data">Each API key, when you choose <strong>Save and check</strong></td>
+<td data-label="Sent to">Its own provider only</td>
+<td data-label="Why">To confirm the key works</td>
+</tr>
+</tbody></table></div>
+<p>When you submit a new query from Google&#39;s own search box, the web search for it may
+start a moment before the next page loads, so the answer appears sooner.</p>
+<p>Requests go directly from your browser to these endpoints over HTTPS (Ollama runs on
+your own computer and is reached over its local address). As with any HTTPS request,
+providers receive normal network metadata such as your IP address. Their handling of
+data is governed by their own policies:
+<a target="_blank" rel="noopener noreferrer" href="https://openrouter.ai/privacy">OpenRouter</a> and
+<a target="_blank" rel="noopener noreferrer" href="https://parallel.ai/privacy-policy">Parallel AI</a>.</p>
+<p>Search queries and questions are free text. Anything you type into them, including
+personal information, is sent as written.</p>
+<p>When <strong>Show Overview</strong> is turned off in Settings, the extension only hides Google&#39;s
+AI Overview: it sends nothing to any provider. Spelling corrections, ads and results
+on Google&#39;s page are never changed.</p>
+<p>The extension does <strong>not</strong> send your browsing history, the contents of Google&#39;s page,
+or any other personal data. It does <strong>not</strong> use analytics, telemetry, tracking, ads or
+remote code. Its author never sees your data.</p>
+<h2>What is stored, and where</h2>
+<p>Everything stays on your device unless noted.</p>
+<ul>
+<li><strong>API keys, preferences (including blocked sites) and your consent choice:</strong>
+<code>chrome.storage.local</code>, restricted to the extension&#39;s trusted contexts. The content
+script running on Google pages cannot read them. Keys are sent only to their own
+provider.</li>
+<li><strong>Saved conversations:</strong> the extension&#39;s own IndexedDB on this device. A search is
+saved only when you continue it (a follow-up, <strong>Open conversation</strong>, or Google&#39;s AI
+Mode tab). Conversations are never uploaded or synced. Delete one or all of them from
+the Conversations page at any time.</li>
+<li><strong>Overview on/off:</strong> a single on/off value in <code>chrome.storage.sync</code>. If you use
+Chrome sync, your browser syncs this one value between your devices; it contains
+nothing else.</li>
+<li><strong>Request state, the evidence behind the current answer, recent answers and short-lived
+caches:</strong> <code>chrome.storage.session</code>, which Chrome clears when the browser session ends.</li>
+</ul>
+<p>Use <strong>Reset all settings</strong> in Settings to remove your keys, preferences and consent,
+and <strong>Delete all</strong> on the Conversations page to remove saved conversations.
+Uninstalling the extension removes all of its stored data.</p>
+<h2>Limited Use</h2>
+<p>The use of information received by Overview adheres to the
+<a target="_blank" rel="noopener noreferrer" href="https://developer.chrome.com/docs/webstore/program-policies/user-data-faq">Chrome Web Store User Data Policy</a>,
+including the
+<a target="_blank" rel="noopener noreferrer" href="https://developer.chrome.com/docs/webstore/program-policies/limited-use">Limited Use</a>
+requirements. Data is used only to provide Overview&#39;s single purpose, cited answers to
+your Google searches, and is sent only to the providers you configure for that
+purpose. It is never sold, never used for advertising, never used to determine
+creditworthiness or for lending, and never read by the author or any other person.</p>
+<h2>Children</h2>
+<p>Overview is not directed to children and does not knowingly process children&#39;s data.</p>
+<h2>Changes</h2>
+<p>Changes to this policy are published at this address with a new &quot;Last updated&quot; date.
+Changes that affect what is sent ask for your consent again inside the extension.</p>
+<h2>Contact</h2>
+<p>Questions or requests: <a href="mailto:bengrossman5@gmail.com">bengrossman5@gmail.com</a></p>
+
+  <footer>Overview is an independent browser extension and is not affiliated with Google.</footer>
+</main>
+</body>
+</html>
